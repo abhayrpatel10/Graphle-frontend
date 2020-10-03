@@ -26,22 +26,7 @@
           <h2 style="color:black align:center" class="text-center text-dark">Graphle</h2>
             <h5 class="card-title text-center">Welcome</h5>
             <form class="form">
-              <!--<div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                <label for="inputEmail">Email address</label>
-              </div>
-
-              <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                <label for="inputPassword">Password</label>
-              </div>
-
-              <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">Keep me logged in</label>
-              </div>
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
-              <hr class="my-4">-->
+              
               <button id="google-button"class="btn btn-lg btn-google btn-block text-uppercase"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
        
             </form>
@@ -63,27 +48,24 @@
     // Initialize with your OAuth.io app public key
     console.log('STart ifhsifbksbf')
     OAuth.initialize('pSKp4qi51866qhIR4oCPmnRXquU');
-    // Use popup for OAuth
-    // OAuth.popup('google').then(google => {
-    //   console.log('google:',google);
-    //   // Retrieves user data from oauth provider
-    //   // Prompts 'welcome' message with User's email on successful login
-    //   // #me() is a convenient method to retrieve user data without requiring you
-    //   // to know which OAuth provider url to call
-    //   google.me().then(data => {
-    //     console.log('me data:', data);
-    //     alert('Google says your email is:' + data.email + ".\nView browser 'Console Log' for more details");
-    //   });
-    //   // Retrieves user data from OAuth provider by using #get() and
-    //   // OAuth provider url
-    //   google.get('/plus/v1/people/me').then(data => {
-    //     console.log('self data:', data);
-    //   })
-    // });
-    OAuth.popup('google').done(function(result) {
-        console.log(result)
-        // do some stuff with result
-    })
+     OAuth.popup('google').then(google => {
+      console.log('google:',google);
+      // Retrieves user data from oauth provider
+      // Prompts 'welcome' message with User's email on successful login
+      // #me() is a convenient method to retrieve user data without requiring you
+      // to know which OAuth provider url to call
+      google.me().then(data => {
+        console.log('me data:', data);
+        alert('Google says your email is:' + data.email + ".\nView browser 'Console Log' for more details");
+      });
+      // Retrieves user data from OAuth provider by using #get() and
+      // OAuth provider url
+      google.get('/plus/v1/people/me').then(data => {
+        console.log('self data:', data);
+      })
+    });
+    
+    
   })
   </script>
 </body>
